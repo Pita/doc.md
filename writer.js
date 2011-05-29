@@ -68,7 +68,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     }
     
     //function header
-    markdownTxt += "###`" + funcArray[i].name + " (" + paramArray.join(", ") + ")`\n";
+    markdownTxt += "###" + funcArray[i].name + " (" + paramArray.join(", ") + ")\n";
     
     //function comment
     if(funcArray[i].comment)
