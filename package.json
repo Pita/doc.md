@@ -1,0 +1,11 @@
+{
+  "name"          : "doc.md",
+  "description"   : "A simple JSDoc documenation tool that creates markdown for node.js modules",
+  "homepage"      : "https://github.com/Pita/doc.md",
+  "keywords"      : ["jsdoc", "documenation", "markdown"],
+  "author"        : "Peter 'Pita' Martischka <petermartischka@googlemail.com>",
+  "version"       : "0.0.1",
+  "bin"           : { 
+                      "doc.md" : "./index.js"
+                    }
+}
