@@ -5,19 +5,19 @@ This is an example module
 
 ##Functions
 
-###`test (a, b)`
+###test (a, b)
 This is the first test function
 
 * **a** *(String)* Parameter is text
 * **b** *(Number)* B is a number, its 42
 
-###`test2 (a, b)`
+###test2 (a, b)
 This is an example module
 
 * **a** *(Number)* a ist 21, the half answer
 * **b** We don't know what b ist
 
-###`test3 (d, k, a)`
+###test3 (d, k, a)
 
 * **d** 
 * **k** 
