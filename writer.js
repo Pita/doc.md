@@ -36,9 +36,6 @@ exports.parsedObj2md = function(docFolder, parsedObj)
   if(parsedObj.comment)
     markdownTxt += parsedObj.comment + "\n\n";
   
-  //Functions header
-  markdownTxt += "##Functions\n\n";
-  
   //move all functions in an array
   var funcArray = [];
   for(var i in parsedObj.functions)
@@ -47,6 +44,10 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     arrayObj.name = i;
     funcArray.push(arrayObj);
   }
+    
+  //Functions header
+  if(funcArray.length > 0)
+    markdownTxt += "##Functions\n\n";
   
   //sort that array by function name
   funcArray.sort(function (a,b)
@@ -93,9 +94,6 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     markdownTxt += "\n";
   }
   
-  //Variables header
-  markdownTxt += "##Variables\n\n";
-  
   //move all variables in an array
   var varArray = [];
   for(var i in parsedObj.variables)
@@ -104,6 +102,10 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     arrayObj.name = i;
     varArray.push(arrayObj);
   }
+    
+  //Variables header
+  if(varArray.length > 0)
+    markdownTxt += "##Variables\n\n";
   
   //sort that array by variable name
   varArray.sort(function (a,b)
