@@ -47,6 +47,9 @@ exports.parseFile = function(baseFolder, filename)
     docComment = docComment.replace(/\n\s*\*\s*/mg, "\n");
     docComment = trimStr(docComment);
     parsedObj.comment = docComment;
+  
+    //cut the document away from the rest of the code
+    code = code.substr(match.index + match[0].length);
   }
   
   //get all exported functions with a regular expression
