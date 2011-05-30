@@ -3,7 +3,10 @@ I created doc.md cause all the jsdoc tools I found were too complex or doesn't d
 
 #Example
 
+A single File
 [test.js](https://github.com/Pita/doc.md/blob/master/exampleSRC/blub/test.js) -> [test.md](https://github.com/Pita/doc.md/blob/master/exampleDOC/blub/test.md)
+
+[A documentation folder generated with doc.md] (https://github.com/Pita/etherpad-lite/tree/master/doc/jsdoc)
 
 #Install
 `npm install -g doc.md`
