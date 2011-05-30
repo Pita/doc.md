@@ -69,7 +69,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     }
     
     //function header
-    markdownTxt += "### " + funcArray[i].name + " (" + paramArray.join(", ") + ")\n";
+    markdownTxt += "- - -\n### " + funcArray[i].name + " (" + paramArray.join(", ") + ")\n";
     
     //function comment
     if(funcArray[i].comment)
@@ -121,7 +121,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
   //go trough all variables
   for(var i in varArray)
   {
-    markdownTxt += "### " + varArray[i].name + " ";
+    markdownTxt += "- - -\n### " + varArray[i].name + " ";
     
     if(varArray[i].type)
       markdownTxt += "*(" + varArray[i].type + ")*";
