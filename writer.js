@@ -27,7 +27,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
   var markdownTxt = "";
   
   //Module name
-  markdownTxt += "#" + parsedObj.name + "\n";
+  markdownTxt += "# " + parsedObj.name + "\n";
   
   //Require 
   markdownTxt += "`require(" + JSON.stringify(parsedObj.path) + ");`\n\n";
@@ -47,7 +47,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     
   //Functions header
   if(funcArray.length > 0)
-    markdownTxt += "##Functions\n\n";
+    markdownTxt += "## Functions\n\n";
   
   //sort that array by function name
   funcArray.sort(function (a,b)
@@ -69,7 +69,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
     }
     
     //function header
-    markdownTxt += "###" + funcArray[i].name + " (" + paramArray.join(", ") + ")\n";
+    markdownTxt += "### " + funcArray[i].name + " (" + paramArray.join(", ") + ")\n";
     
     //function comment
     if(funcArray[i].comment)
@@ -87,6 +87,8 @@ exports.parsedObj2md = function(docFolder, parsedObj)
         
       if(funcArray[i].param[j].comment)
         markdownTxt += funcArray[i].param[j].comment;
+      else
+        markdownTxt += "*No description*";
         
       markdownTxt += "\n";
     }
@@ -119,7 +121,7 @@ exports.parsedObj2md = function(docFolder, parsedObj)
   //go trough all variables
   for(var i in varArray)
   {
-    markdownTxt += "###" + varArray[i].name + " ";
+    markdownTxt += "### " + varArray[i].name + " ";
     
     if(varArray[i].type)
       markdownTxt += "*(" + varArray[i].type + ")*";
