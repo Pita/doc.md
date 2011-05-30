@@ -69,7 +69,7 @@ exports.parseFile = function(baseFolder, filename)
     parsedObj.functions[functionName] = {param: []};
     
     //get the params
-    var functionParam = functions[i][2].split(",");
+    var functionParam = trimStr(functions[i][2]).length > 0 ? functions[i][2].split(",") : [];
     
     //trim the params and add them to the obj
     for(var i in functionParam)
