@@ -139,12 +139,12 @@ exports.parseFile = function(baseFolder, filename)
       //if this is a function param
       if(tagType == "param" && type == "func")
       {
-        var paramRegExp = /^([a-zA-Z_$][0-9a-zA-Z_$]*)\s*(\{(.*?)\})?\s*((.|\n|\r)*)/m;
+        var paramRegExp = /^(\{(.*?)\})?\s*([a-zA-Z_$][0-9a-zA-Z_$]*)\s*((.|\n|\r)*)/m;
         
         var match = paramRegExp.exec(tagText);
         
-        var paramName    = match[1];
-        var paramType    = match[3];
+        var paramName    = match[3];
+        var paramType    = match[2];
         var paramComment = match[4];
         
         var paramNum = -1;
