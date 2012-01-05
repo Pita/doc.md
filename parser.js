@@ -1,4 +1,6 @@
-var fs = require("fs");
+var fs = require("fs")
+  , path = require('path')
+  , basename = path.basename;
 
 /**
 * 2011 Peter 'Pita' Martischka
@@ -27,19 +29,18 @@ exports.parseFile = function(baseFolder, filename)
   var parsedObj = {};
   
   //get the name of the module
-  var name = filename.substr(filename.lastIndexOf("/")+1);
-  name = filename.substr(0,name.lastIndexOf(".js"));
+  var name = basename(filename, '.js');
   parsedObj.name = name;
 
   //get the require path
-  var requirePath = "./" + filename.replace(/.js$/,""); 
+  var requirePath = "./" + name; 
   parsedObj.path = requirePath;
 
   //read the file
   var code = fs.readFileSync(baseFolder + "/" + filename, "utf8");
   
   //search the comment of the document
-  var docCommentRegExp = /^\s*\/\*\*((.|\n|\r)*?)\*\//m;
+  var docCommentRegExp = /^\s*\/\*\*?((.|\n|\r)*?)\*\//m;
   var match = docCommentRegExp.exec(code);
   if(match != null)
   {
