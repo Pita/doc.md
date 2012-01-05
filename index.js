@@ -52,8 +52,8 @@ try
 
 if(!destValid)
 {
-  console.error("'"+destFolder + "' is no directory!");
-  process.exit(1);
+  console.log("'"+destFolder + "' is no directory! I'll create it for you.");
+  fs.mkdirSync(destFolder);
 }
 
 //start recursive function 
